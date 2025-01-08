@@ -1,0 +1,39 @@
+---
+const contacts = [
+  {
+    name: "",
+    role: "",
+    opinion:
+      "DSO-IFZA, IFZA Properties, Dubai Silicon Oasis, United Arab Emirates",
+  },
+  {
+    name: "",
+    role: "",
+    opinion:
+      "WISE BRIDGE BROKER SERVICES - FZCO",
+  },
+  {
+    name: "",
+    role: "",
+    opinion:
+      "info@wisebridge.pro",
+  }
+];
+---
+
+<section class="bg-nocolor">
+    <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary gap-6 pt-2 mt-2">
+      {
+        contacts.map((opinion) => (
+         <div>
+            <p class="text-2xl block font-bold">
+              {opinion.name} {opinion.role}
+            </p>
+            <p class="text-xs leading-relaxed mt-6">
+              {opinion.opinion}
+            </p>
+         </div>
+        ))
+      }
+    </div>
+</section>

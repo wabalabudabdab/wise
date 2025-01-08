@@ -1,14 +1,10 @@
 ---
 // Импорт компонентов
+import Testimonials from "@/components/_base/Testimonials.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Testimonials from "../components/logistics/Testimonials.astro";
-import FooterLogistics from "../components/logistics/FooterLogistics.astro";
-import IntroLogistics from "@/components/logistics/IntroLogistics.astro";
-import PictureBlock from "@/components/logistics/PictureBlock.astro";
-import Menu from "@/components/main/Menu.astro";
-// import Benefits from "@/components/main/Benefits.astro";
-import Intro from "@/components/main/Intro.astro";
-import VideoHeader from "@/components/logistics/VideoHeader.astro";
+import Logo from "@/components/_ui/Logo.astro";
+import AboutCompany from "@/components/main/AboutCompany.astro";
+
 ---
 
 <BaseLayout>
@@ -19,111 +15,234 @@ import VideoHeader from "@/components/logistics/VideoHeader.astro";
         </video>
     </div>
 
-    <Menu />
-    <Intro />
-    <div class="picture-wrapper">
-        <PictureBlock />
-    </div>
-    <div class="container mx-auto px-8 max-w-7xl text-secondary">
-        <p class="text-base text-secondary leading-relaxed mb-6 pt-6 font-optima">
-          Being an independent group, represented by a number of private companies operating in the United Arab Emirates, Asia, and Europe, as well as a professional fund and its managing company in Dubai. We are focused on structuring international deals, processing investment projects, providing complete business in B2B and B2C projects, delivering professional corporate services for large scale businesses.
-        </p>
-        <a href="mailto:info@wisebridge.pro" class="inline-block text-white border border-white py-2 px-4 rounded transition-colors duration-200 hover:bg-nocolor hover:bg-opacity-10 hover:text-secondary">
-          CONNECT
-        </a>
-        
-      </div>
-    <FooterLogistics />
+	<main>
+		<!--about block-->
+		<section class="bg-primary">
+
+			<div class="container mx-auto max-w-4xl" style="max-width:1200px; padding: 3rem;" >
+				<div class=" items-center max-w-4xl ">
+					<Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"}/>
+				
+					<h1>CONTRACT LOGISTICS</h1>
+					<p class="text-base text-secondary leading-relaxed mb-6 pt-6 font-optima ">
+						Wisebridge offers bespoke contract logistics solutions to meet your specific requirements.
+                        We&nbsp;are&nbsp;equipped to&nbsp;deal with complex supply chains needs and deliver maximum value through our&nbsp;Single Solution.
+                        <br/>
+
+					</p>
+                    <Testimonials/>
+
+                    <!-- <Button href="mailto:info@wisebridge.pro" text="CONNECT" /> -->
+					<a href="mailto:info@wisebridge.pro" class="inline-block mt-10 text-white border border-white py-2 px-4 rounded transition-colors duration-200 hover:bg-nocolor hover:bg-opacity-10 hover:text-secondary">
+						CONNECT
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--about block-->
+
+		<br/>	
+		<br/>	
+		<!--logistic block-->
+            <div class="container mx-auto" style="max-width:1200px">
+                <div class="picture-wrapper">
+                    <div class="md:grid md:grid-cols-2 gap-12 items-center">
+                        <div class="md:order-1 md:col-span-1">
+                            <h2 class="text-4xl md:hidden mb-10">Automatisation solutions</h2> {/* Heading only on mobile */}
+                            <img class="rounded w-full md:w-auto" src="/image.png" alt="Automation" />
+                        </div>
+                        <div class="md:order-2 flex flex-col items-start md:col-span-1">
+                            <div class="hidden md:block"> {/* Text only on desktop */}
+                                <h2 class="text-4xl">Automatisation solutions</h2>
+                                <p class="mt-6">
+                                    Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
+                                </p>
+                                <p class="mt-4">
+                                    Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
+                                </p>
+                            </div>
+                            <div class="md:hidden mt-4"> {/* Text only on mobile, below the image */}
+                                <p class="mt-6">
+                                    Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
+                                </p>
+                                <p class="mt-4">
+                                    Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		<!--logistic block-->
+<!-- 
+		<br/>	
+		<br/>	
+        <div class="container mx-auto" style="padding: 3rem">
+            <Testimonials/>
+        </div>
+
+        <br/>	
+        <br/>	 -->
+
+            <!--logistic block 2-->
+            <!-- <div class="container mx-auto" style="max-width:1200px">
+                <div class="picture-wrapper">
+                    <div class="md:grid md:grid-cols-2 gap-12 items-center">
+                        <div class="md:order-1 flex flex-col items-start md:col-span-1">
+                            <div class="hidden md:block"> {/* Text only on desktop */}
+                                <h2 class="text-4xl">Additional services</h2>
+
+                                <p class="mt-4">
+                                    High quality trained team provides ‘value added’ services, such&nbsp;as: <span class="font-bold">
+                                        <br/>
+                                        <br/>
+                                        • data-matrix <br/>
+                                        • QRs <br/>
+                                        • labeling<br/>
+                                        • translation
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="md:order-2 md:col-span-1">
+                            <h2 class="text-4xl md:hidden mb-10">Additional services</h2> {/* Heading only on mobile */}
+                            <img class="rounded w-full md:w-auto" src="/other.png" alt="Automation" />
+                            <div class="md:hidden mt-4"> {/* Text only on mobile, below the image */}
+
+                                <p class="mt-4">
+                                    High quality trained team provides ‘value added’ services, such&nbsp;as: <span class="font-bold">
+                                        <br/>
+                                        <br/>
+                                        • data-matrix 
+                                        • QRs
+                                        • labeling 
+                                        • translation
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        <!--logistic block-->
+
+        <br/>
+        <br/>        
+
+        <!-- <div class="container mx-auto" style="padding: 3rem;border-top: 1px solid white;">
+            <Contacts/>
+        </div> -->
+        <AboutCompany/>
+
+	</main>
+	
+	  
 
 </BaseLayout>
 
 <style>
-    /*video bg styles*/
-    .is_overlay {
-        position: fixed;
-        display: block;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -99;
-        overflow: hidden;
-        max-height: 100vh;
-    }
+	/*video bg styles*/
+	.is_overlay{
+		position: fixed;
+		display: block;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -99;
+		overflow: hidden;
+		max-height: 100vh;
+	}
+	#trailer > video{
+		position: fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		filter: contrast(0.9) brightness(0.6);
+		overflow: hidden;
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
+		-webkit-object-fit: cover;
+		-moz-object-fit: cover;
+		-o-object-fit: cover;
+	}
 
-    #trailer > video {
-        position: fixed;
-        top: 0; right: 0; bottom: 0; left: 0;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        filter: contrast(0.9) brightness(0.6);
-        overflow: hidden;
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: cover;
-        -webkit-object-fit: cover;
-        -moz-object-fit: cover;
-        -o-object-fit: cover;
-    }
+	/* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его:*/
+	@supports (object-fit: cover) {
+		#trailer > video {
+			position: fixed;
+			display: block;
+			top: 0; right: 0; bottom: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			-webkit-object-fit: cover;
+			-moz-object-fit: cover;
+			-o-object-fit: cover;
+		}
+	}
 
-    /* Блок PictureBlock со стилем размытия */
-    .picture-wrapper {
+	main {
+		margin: auto;
+		padding: 1rem;
+		max-width: 1100px;
+		height: 100%;
+		max-height: 100%;
+		//max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.5;
+		font-family: Optima;
+		font-weight: lighter;
+	}
+	.about {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 400;
+		line-height: 1;
+		margin-top: 80px;
+		@media (max-width: 570px) {
+			font-size: 2rem;
+			line-height: 1.2;
+		}
+	}
+	h2 {
+		font-family: Optima;
+	}
+
+	p {
+		/* max-width: 800px; */
+		height: 100%;
+		max-height: 100%;
+		color: #fff;
+		font-size: 20px;
+		line-height: 1.5;
+		font-family: Optima;
+		font-weight: lighter;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
+		gap: 2rem;
+		/* padding: 40px 0; */
+		border-top: 1px solid white;
+	}
+
+	/* Блок PictureBlock со стилем размытия */
+	.picture-wrapper {
+		max-width: 100%;
         position: relative;
-        backdrop-filter: blur(10px); /* Применяем размытие к фону под PictureBlock */
+        backdrop-filter: blur(10px); 
         -webkit-backdrop-filter: blur(10px); /* Для Safari */
-        padding: 2rem; /* Оставляем отступы вокруг блока */
+        padding: 3rem; /* Оставляем отступы вокруг блока */
         z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
 		margin: 0 auto;
-    	width:  93%;;
 		border-radius: 16px;
-    }
-
-    @supports (object-fit: cover) {
-        #trailer > video {
-            position: fixed;
-            display: block;
-            top: 0; right: 0; bottom: 0; left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            -webkit-object-fit: cover;
-            -moz-object-fit: cover;
-            -o-object-fit: cover;
-        }
-    }
-
-    main {
-        margin: auto;
-        padding: 1rem;
-        max-width: 1100px;
-        height: 100%;
-        max-height: 100%;
-        color: white;
-        font-size: 20px;
-        line-height: 1.5;
-        font-family: Optima;
-        font-weight: lighter;
-    }
-    .about {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-    }
-    h1 {
-        font-size: 4rem;
-        font-weight: 400;
-        line-height: 1;
-        margin-bottom: 1em;
-        @media (max-width: 570px) {
-            font-size: 2rem;
-            line-height: 1.2;
-        }
-    }
-    .link-card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
-        gap: 2rem;
-        border-top: 1px solid white;
     }
 </style>
