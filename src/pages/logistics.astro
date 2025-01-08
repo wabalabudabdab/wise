@@ -1,0 +1,129 @@
+---
+// Импорт компонентов
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Testimonials from "../components/logistics/Testimonials.astro";
+import FooterLogistics from "../components/logistics/FooterLogistics.astro";
+import IntroLogistics from "@/components/logistics/IntroLogistics.astro";
+import PictureBlock from "@/components/logistics/PictureBlock.astro";
+import Menu from "@/components/main/Menu.astro";
+// import Benefits from "@/components/main/Benefits.astro";
+import Intro from "@/components/main/Intro.astro";
+import VideoHeader from "@/components/logistics/VideoHeader.astro";
+---
+
+<BaseLayout>
+
+    <div id="trailer" class="is_overlay">
+        <video id="video" width="100%" height="auto" autoplay loop muted playsinline preload="auto">
+            <source src="./../logistic.mp4"></source>
+        </video>
+    </div>
+
+    <Menu />
+    <Intro />
+    <div class="picture-wrapper">
+        <PictureBlock />
+    </div>
+    <div class="container mx-auto px-8 max-w-7xl text-secondary">
+        <p class="text-base text-secondary leading-relaxed mb-6 pt-6 font-optima">
+          Being an independent group, represented by a number of private companies operating in the United Arab Emirates, Asia, and Europe, as well as a professional fund and its managing company in Dubai. We are focused on structuring international deals, processing investment projects, providing complete business in B2B and B2C projects, delivering professional corporate services for large scale businesses.
+        </p>
+        <a href="mailto:info@wisebridge.pro" class="inline-block text-white border border-white py-2 px-4 rounded transition-colors duration-200 hover:bg-nocolor hover:bg-opacity-10 hover:text-secondary">
+          CONNECT
+        </a>
+        
+      </div>
+    <FooterLogistics />
+
+</BaseLayout>
+
+<style>
+    /*video bg styles*/
+    .is_overlay {
+        position: fixed;
+        display: block;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -99;
+        overflow: hidden;
+        max-height: 100vh;
+    }
+
+    #trailer > video {
+        position: fixed;
+        top: 0; right: 0; bottom: 0; left: 0;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        filter: contrast(0.9) brightness(0.6);
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        -webkit-object-fit: cover;
+        -moz-object-fit: cover;
+        -o-object-fit: cover;
+    }
+
+    /* Блок PictureBlock со стилем размытия */
+    .picture-wrapper {
+        position: relative;
+        backdrop-filter: blur(10px); /* Применяем размытие к фону под PictureBlock */
+        -webkit-backdrop-filter: blur(10px); /* Для Safari */
+        padding: 2rem; /* Оставляем отступы вокруг блока */
+        z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
+		margin: 0 auto;
+    	width:  93%;;
+		border-radius: 16px;
+    }
+
+    @supports (object-fit: cover) {
+        #trailer > video {
+            position: fixed;
+            display: block;
+            top: 0; right: 0; bottom: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-object-fit: cover;
+            -moz-object-fit: cover;
+            -o-object-fit: cover;
+        }
+    }
+
+    main {
+        margin: auto;
+        padding: 1rem;
+        max-width: 1100px;
+        height: 100%;
+        max-height: 100%;
+        color: white;
+        font-size: 20px;
+        line-height: 1.5;
+        font-family: Optima;
+        font-weight: lighter;
+    }
+    .about {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    h1 {
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 1em;
+        @media (max-width: 570px) {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+    }
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
+        gap: 2rem;
+        border-top: 1px solid white;
+    }
+</style>

@@ -1,19 +1,188 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Hero from "../components/landing/Hero.astro";
-import Intro from "../components/landing/Intro.astro";
-import Projects from "../components/landing/Projects.astro";
-import Testimonials from "../components/landing/Testimonials.astro";
-import FeaturedWork from "../components/landing/FeaturedWork.astro";
+import AboutCompany from "../components/main/AboutCompany.astro";
+import Logo from "@/components/_ui/Logo.astro";
 
 ---
 
 
 <BaseLayout>
-  <Hero />
-  <Intro />
+ 	 <div id="trailer" class="is_overlay" style="px-8 2xl:max-w-7xl mx-auto py-6">
+		<video id="video" width="100%" height="auto" autoplay loop muted playsinline preload="auto">
+			<source src="./../backwall.mp4"></source>
+			<!--<source src="bg.webm" type="video/webm"></source>-->
+    </video>
+	</div>
 
-  <Projects />
-  <Testimonials />
-  <FeaturedWork />
+
+	<main>
+		<!--about block-->
+		<section class="bg-primary">
+
+			<div class="container mx-auto max-w-4xl" style="max-width:1200px; padding: 3rem;" >
+				<div class=" items-center max-w-4xl ">
+					<Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"}/>
+				
+					<h1>TRUSTED INTERNATIONAL PARTNER</h1>
+					<p class="text-base text-secondary leading-relaxed mb-6 pt-6 font-optima ">
+						Being an independent group, represented by a number of private companies operating in the United Arab Emirates, Asia, and Europe, as well as a professional fund and its managing company in Dubai. We are focused on structuring international deals, processing investment projects, providing complete business in B2B and B2C projects, delivering professional corporate services for large scale businesses.
+					</p>
+	
+					<a href="mailto:info@wisebridge.pro" class="inline-block mt-10 text-white border border-white py-2 px-4 rounded transition-colors duration-200 hover:bg-nocolor hover:bg-opacity-10 hover:text-secondary">
+						CONNECT
+					</a>
+				</div>
+			</div>
+		</section>
+		<!--about block-->
+
+		<br/>	
+		<br/>	
+		<!--logistic block-->
+<div class="container mx-auto" style="max-width:1200px">
+	<div class="picture-wrapper">
+		<div class="md:grid md:grid-cols-2 gap-12 items-center">
+			<div class="md:order-1 md:col-span-1">
+				<h2 class="text-4xl md:hidden mb-10">Automatisation</h2> {/* Heading only on mobile */}
+				<p class="mt-6 md:hidden mb-5">
+					Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;<span class="font-bold">1-piece level</span>.
+				</p>
+				<img class="rounded w-full md:w-auto" src="/image.png" alt="Automation" />
+			</div>
+			<div class="md:order-2 flex flex-col items-start md:col-span-1">
+				<div class="hidden md:block"> {/* Text only on desktop */}
+					<h2 class="text-4xl">Automatisation</h2>
+					<p class="mt-6">
+						Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;<span class="font-bold">1-piece level</span>.
+					</p>
+					<p class="mt-4">
+						High quality trained team provides ‘value added’ services, such&nbsp;as: <span class="font-bold">data-matrix, QRs, labeling, translation and many others regionally-specifics requirements</span>.
+					</p>
+				</div>
+				<div class="md:hidden mt-4"> {/* Text only on mobile, below the image */}
+					<p class="mt-4">
+						High quality trained team provides ‘value added’ services, such&nbsp;as: <span class="font-bold">data-matrix, QRs, labeling, translation and many others regionally-specifics requirements</span>.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		<!--logistic block-->
+
+		<br/>	
+		<br/>	
+		<AboutCompany />
+
+	</main>
+	
+	  
+
 </BaseLayout>
+
+<style>
+	/*video bg styles*/
+	.is_overlay{
+		position: fixed;
+		display: block;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -99;
+		overflow: hidden;
+		max-height: 100vh;
+	}
+	#trailer > video{
+		position: fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		filter: contrast(0.9) brightness(0.6);
+		overflow: hidden;
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: cover;
+		-webkit-object-fit: cover;
+		-moz-object-fit: cover;
+		-o-object-fit: cover;
+	}
+
+	/* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его:*/
+	@supports (object-fit: cover) {
+		#trailer > video {
+			position: fixed;
+			display: block;
+			top: 0; right: 0; bottom: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			-webkit-object-fit: cover;
+			-moz-object-fit: cover;
+			-o-object-fit: cover;
+		}
+	}
+
+	main {
+		margin: auto;
+		padding: 1rem;
+		max-width: 1100px;
+		height: 100%;
+		max-height: 100%;
+		//max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.5;
+		font-family: Optima;
+		font-weight: lighter;
+	}
+	.about {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 400;
+		line-height: 1;
+		margin-top: 80px;
+		@media (max-width: 570px) {
+			font-size: 2rem;
+			line-height: 1.2;
+		}
+	}
+	h2 {
+		font-family: Optima;
+	}
+
+	p {
+		/* max-width: 800px; */
+		height: 100%;
+		max-height: 100%;
+		color: #fff;
+		font-size: 20px;
+		line-height: 1.5;
+		font-family: Optima;
+		font-weight: lighter;
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
+		gap: 2rem;
+		/* padding: 40px 0; */
+		border-top: 1px solid white;
+	}
+
+	/* Блок PictureBlock со стилем размытия */
+	.picture-wrapper {
+		max-width: 100%;
+        position: relative;
+        backdrop-filter: blur(10px); /* Применяем размытие к фону под PictureBlock */
+        -webkit-backdrop-filter: blur(10px); /* Для Safari */
+        padding: 3rem; /* Оставляем отступы вокруг блока */
+        z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
+		margin: 0 auto;
+		border-radius: 16px;
+    }
+</style>
