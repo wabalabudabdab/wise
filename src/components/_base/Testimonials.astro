@@ -23,10 +23,11 @@ const humanOpinions = [
 ---
 
 <section class="bg-nocolor">
-    <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary gap-6 pt-2 mt-2">
+    <div class="grid grid-cols-1 lg:grid-cols-3 text-secondary gap-6 pt-2 mt-2" style="  border-bottom: 1px solid white; 
+;border-top: 1px solid white; ">
       {
         humanOpinions.map((opinion) => (
-         <div>
+         <div class="wrapper ">
             <p class="text-2xl block font-bold">
               {opinion.name} {opinion.role}
             </p>
@@ -38,3 +39,14 @@ const humanOpinions = [
       }
     </div>
 </section>
+
+<style>
+.wrapper {
+  max-width: 100%;
+  position: relative;
+
+  padding: 1rem; Оставляем отступы вокруг блока
+  z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
+  margin: 0 auto;
+  }
+  </style>
