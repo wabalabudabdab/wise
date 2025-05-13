@@ -1,0 +1,36 @@
+---
+// Define testimonials/opinions data
+const humanOpinions = [
+  {
+    name: "Air Freight",
+    role: "",
+    opinion:
+      "Wisebridge FZCO is recognized professional in the field of innovative Air Freight solutions",
+  },
+  {
+    name: "Ocean Freight",
+    role: "",
+    opinion:
+      "We are a premium supplier of Ocean Freight services throughout the Middle East, Asia and beyond",
+  },
+  {
+    name: "Road Freight",
+    role: "",
+    opinion:
+      "First choice for the organization and management of road freight across the Middle East",
+  }
+];
+---
+
+<section class="bg-nocolor">
+  <div class="grid lg:grid-cols-3 text-black gap-6">
+    {
+      humanOpinions.map((opinion) => (
+        <div>
+          <p class="font-bold mb-0">{opinion.name} {opinion.role}</p>
+          <p class="text-s mt-0 mb-0">{opinion.opinion}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -8,7 +8,7 @@ interface Props {
 const { title, subtitle, where } = Astro.props;
 ---
 
-<div class="logo">
+<div class="logo fixed top-6 left-8 z-50 pt-4">
     <div class="logo-image">
         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
              width="100" height="100" viewBox="0 0 397.000000 394.000000"
@@ -61,6 +61,7 @@ const { title, subtitle, where } = Astro.props;
         display: flex;
         flex-direction: row;
         align-items: left;
+        position: absolute;
     }
     .logo-image {
         width: 100px;
@@ -72,6 +73,7 @@ const { title, subtitle, where } = Astro.props;
         padding: 10px 20px;
         width: 100px;
         align-items: center;
+        color: var(--color-white);
     }
 
 </style>

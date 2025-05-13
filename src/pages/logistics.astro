@@ -1,187 +1,101 @@
 ---
-// Импорт компонентов
-import Testimonials from "@/components/_base/Testimonials.astro";
+import Testimonials from "@/pages/logistics/Testimonials.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Logo from "@/components/_ui/Logo.astro";
-import AboutCompany from "@/components/main/AboutCompany.astro";
-
+import Logo from "@/components/ui/Logo.astro";
+import Button from "@/components/ui/Button.astro";
+import AboutCompany from "@/components/base/AboutCompany.astro";
+import Intro from "@/pages/main/Intro.astro";
 ---
 
 <BaseLayout>
-
-    <div id="trailer" class="is_overlay">
-        <video id="video" width="100%" height="auto" autoplay loop muted playsinline preload="auto">
-            <source src="logistic.mp4"></source>
-        </video>
-    </div>
-
 	<main>
 		<!--about block-->
-		<section class="bg-primary">
-            <div class="container mx-auto max-w-4xl" style="max-width:1200px; padding-left: 3rem;padding-right: 3rem;" >
-				<div class=" items-center max-w-4xl ">
-					<Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"}/>
-				
-					<h1>CONTRACT LOGISTICS</h1>
-                    <p class="text-base text-secondary leading-relaxed mb-6 pt-12 font-optima ">
-						Wisebridge offers bespoke contract logistics solutions to meet your specific requirements.
-                        We&nbsp;are&nbsp;equipped to&nbsp;deal with complex supply chains needs and deliver maximum value through our&nbsp;Single Solution.
-                        <br/>
-						High quality trained team provides ‘value added’ services, such&nbsp;as: <span class="font-bold">
-                            data-matrix, QRs, labeling, translation</span> and many others regionally-specifics requirements.
-                        </span>
-					</p>
-					
-                    <!-- <Button href="mailto:info@wisebridge.pro" text="CONNECT" /> -->
-					<a href="mailto:info@wisebridge.pro" style="padding:20px 40px" class="inline-block mt-10 text-white border border-white py-2 px-4 rounded transition-colors duration-200 hover:bg-nocolor hover:bg-opacity-10 hover:text-secondary">
-						CONNECT
-					</a>
-                </div>
+		<section class="relative bg-primary overflow-hidden w-full min-h-screen flex items-center p-0" style="min-height: 100vh; ">
+			<div class="absolute inset-0 w-full h-full -z-10" style="filter: brightness(0.5)" >
+				<video
+					class="w-full h-full object-cover"
+					autoplay
+					loop
+					muted
+					playsinline
+					preload="auto"
+				>
+					<source src="logistic.mp4" />
+				</video>
 			</div>
-			
-            </div>
+				<Intro />								
+			</div>
 			</div>
 		</section>
 		<!--about block-->
 		<br/>	
 		<br/>
-		<div class="container mx-auto" style="max-width:1200px; padding: 3rem">
-			<Testimonials/>
-		</div>
-		<br/>	
-		<br/>	
-		<!--logistic block-->
-            <div class="container mx-auto" style="max-width:1200px">
-                <div class="picture-wrapper">
-                    <div class="md:grid md:grid-cols-2 gap-12 items-center">
-                        <div class="md:order-1 md:col-span-1">
-                            <h2 class="text-4xl md:hidden mb-10">Automatisation solutions</h2> {/* Heading only on mobile */}
-                            <img class="rounded w-full md:w-auto" src="logistics.jpg" alt="Automation" />
-                        </div>
-                        <div class="md:order-2 flex flex-col items-start md:col-span-1">
-                            <div class="hidden md:block"> {/* Text only on desktop */}
-                                <h2 class="text-4xl">Automatisation solutions</h2>
-                                <p class="mt-6">
-                                    Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
-                                </p>
-                                <p class="mt-4">
-                                    Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
-                                </p>
-                            </div>
-                            <div class="md:hidden mt-4"> {/* Text only on mobile, below the image */}
-                                <p class="mt-6">
-                                    Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
-                                </p>
-                                <p class="mt-4">
-                                    Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+		<section class= "bg-white text-black">
+		
+			<!--features block-->
+				<Testimonials/>
+			<!--features block-->
+
+			<!--logistic block-->
+			<div style= "margin-top:100px">
+
+					<div class="md:grid md:grid-cols-2 gap-12 items-center">
+						<div class="md:order-1 md:col-span-1">
+							<h2 class="text-4xl md:hidden mb-10 text-black">Automatisation solutions</h2> {/* Heading only on mobile */}
+							<img class="rounded w-full md:w-auto" src="logistics.jpg" alt="Automation" />
+						</div>
+						<div class="md:order-2 flex flex-col items-start md:col-span-1">
+							<div class="hidden md:block"> {/* Text only on desktop */}
+								<h2 class="text-4xl text-black">Automatisation solutions</h2>
+								<p class="mt-6 text-black">
+									Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
+								</p>
+								<p class="mt-4 text-black">
+									Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
+								</p>
+							</div>
+							<div class="md:hidden mt-4"> {/* Text only on mobile, below the image */}
+								<p class="mt-6 text-black">
+									Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
+								</p>
+								<p class="mt-4 text-black">
+									Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
+								</p>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!--logistic block-->
+			</div>
 
 
-        <br/>
-        <br/>        
+		</section>
+		<AboutCompany/>
 
-        <!-- <div class="container mx-auto" style="padding: 3rem;border-top: 1px solid white;">
-            <Contacts/>
-        </div> -->
-        <AboutCompany/>
-
-	</main>
-	
-	  
-
+	</main>	
 </BaseLayout>
 
 <style>
 	/*video bg styles*/
 	.is_overlay{
-		position: fixed;
-		display: block;
-		inset: 0;
 		width: 100%;
 		height: 100%;
-		z-index: -99;
 		overflow: hidden;
 		max-height: 100vh;
 	}
-	#trailer > video{
-		position: fixed;
-		top: 0; right: 0; bottom: 0; left: 0;
-		inset: 0;
+	#video{
 		width: 100%;
 		height: 100%;
-		filter: contrast(0.9) brightness(0.6);
-		overflow: hidden;
-		max-width: 100%;
-		max-height: 100%;
 		object-fit: cover;
-		-webkit-object-fit: cover;
-		-moz-object-fit: cover;
-		-o-object-fit: cover;
 	}
 
-	/* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его:*/
-	@supports (object-fit: cover) {
-		#trailer > video {
-			position: fixed;
-			display: block;
-			top: 0; right: 0; bottom: 0; left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			-webkit-object-fit: cover;
-			-moz-object-fit: cover;
-			-o-object-fit: cover;
-		}
-	}
-
-	main {
-		margin: auto;
-		padding: 1rem;
-		max-width: 1100px;
-		height: 100%;
-		max-height: 100%;
-		//max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.5;
-		font-family: Optima;
-		font-weight: lighter;
-	}
 	.about {
 		width: 100%;
 		height: 100%;
 		padding: 0;
 		margin: 0;
 	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 400;
-		line-height: 1;
-		margin-top: 80px;
-		@media (max-width: 570px) {
-			font-size: 2rem;
-			line-height: 1.2;
-		}
-	}
-	h2 {
-		font-family: Optima;
-	}
 
-	p {
-		/* max-width: 800px; */
-		height: 100%;
-		max-height: 100%;
-		color: #fff;
-		font-size: 20px;
-		line-height: 1.5;
-		font-family: Optima;
-		font-weight: lighter;
-	}
 	.link-card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
@@ -200,5 +114,6 @@ import AboutCompany from "@/components/main/AboutCompany.astro";
         z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
 		margin: 0 auto;
 		border-radius: 16px;
+		margin-top:40px
     }
 </style>

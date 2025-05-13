@@ -1,4 +1,5 @@
 ---
+import Logo from "@/components/ui/Logo.astro";
 import BaseHead from "../components/BaseHead.astro";
 ---
 
@@ -7,7 +8,43 @@ import BaseHead from "../components/BaseHead.astro";
     <BaseHead />
   </head>
 
-  <body class="bg-primary">
+  <body class="bg-primary relative">
+    <Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"}/>
+
+    <!-- Бургер-меню -->
+    <button id="burgerBtn" class="fixed top-6 right-8 z-50 flex flex-col items-center justify-center w-10 h-10 space-y-2 focus:outline-none">
+      <span class="block w-8 h-0.5 bg-white"></span>
+      <span class="block w-8 h-0.5 bg-white"></span>
+      <span class="block w-8 h-0.5 bg-white"></span>
+    </button>
+    <!-- Боковая панель -->
+    <div id="sideMenu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+      <button id="closeMenu" class="self-end m-6 text-3xl text-gray-700 hover:text-black focus:outline-none">&times;</button>
+      <nav class="flex flex-col mt-10 space-y-6 px-8">
+        <a href="/" class="text-lg text-gray-900 hover:text-secondary font-semibold">Главная</a>
+        <a href="/about" class="text-lg text-gray-900 hover:text-secondary font-semibold">О компании</a>
+        <a href="/logistics" class="text-lg text-gray-900 hover:text-secondary font-semibold">Логистика</a>
+        <a href="/contacts" class="text-lg text-gray-900 hover:text-secondary font-semibold">Контакты</a>
+      </nav>
+    </div>
+    <script>
+      const burgerBtn = document.getElementById('burgerBtn');
+      const sideMenu = document.getElementById('sideMenu');
+      const closeMenu = document.getElementById('closeMenu');
+      burgerBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('translate-x-full');
+      });
+      closeMenu.addEventListener('click', () => {
+        sideMenu.classList.add('translate-x-full');
+      });
+      // Закрытие по клику вне меню
+      document.addEventListener('click', (e) => {
+        const target = e.target as Element;
+        if (!sideMenu.contains(target) && !burgerBtn.contains(target)) {
+          sideMenu.classList.add('translate-x-full');
+        }
+      });
+    </script>
     <slot />
     <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"
     ></script>
@@ -16,10 +53,3 @@ import BaseHead from "../components/BaseHead.astro";
     </script>
   </body>
 </html>
-
-<!-- 
-<a href = "/logistic">
-  <p>
-      тут переход на страницу про логистику
-  </p>
-</a> -->
