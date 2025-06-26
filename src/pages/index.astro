@@ -1,103 +1,27 @@
 ---
 import AboutCompany from "@/components/base/AboutCompany.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Logo from "@/components/ui/Logo.astro";
+import Intro from "./main/Intro.astro";
 ---
 
 
 <BaseLayout>
- 	 <div id="trailer" class="is_overlay" style="px-8 2xl:max-w-7xl mx-auto py-6">
+ 	 <div id="trailer" class="is_overlay" style="px-8 2xl:max-w-7xl mx-auto py-6; position: relative;">
 		<video id="video" width="100%" height="auto" autoplay loop muted playsinline preload="auto">
 			<source src="./../backwall.mp4"></source>
 			<!--<souwce src="bg.webm" type="video/webm"></source>-->
     	</video>
 	</div>
 	<main>
-		<!--contect intro-->
-		<section class="bg-primary">
-			<div class="container mx-auto max-w-4xl" style="max-width:1200px; padding: 3rem;" >
-				<div class=" items-center max-w-4xl ">
-					<Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"}/>
-				
-					<h1>TRUSTED INTERNATIONAL PARTNER</h1>
-					<p class="text-base text-secondary leading-relaxed mb-6 pt-6 font-optima ">
-						Being an independent group, represented by a number of private companies operating in the United Arab Emirates, Asia, and Europe, as well as a professional fund and its managing company in Dubai. We are focused on structuring international deals, processing investment projects, providing complete business in B2B and B2C projects, delivering professional corporate services for large scale businesses.
-					</p>
-	
-					<a href="mailto:info@wisebridge.pro" class="inline-block mt-10 text-white border border-white py-2 px-4 rounded transition-colors duration-200 hover:bg-nocolor hover:bg-opacity-10 hover:text-secondary">
-						CONNECT
-					</a>
-				</div>
+		<section class="bg-primary min-h-screen flex items-center">
+			<div class="mx-auto max-w-7xl px-6" style="margin-top: -132px;">
+				<Intro />
 			</div>
 		</section>
-		<!--contect intro-->
-
-		<br/>	
-		<br/>	
-		<AboutCompany />
+		<!-- Contacts -->
+		<section class="bg-black fixed bottom-0 left-0 right-0 w-full">
+			<AboutCompany />
+		</section>
 	</main>
+
 </BaseLayout>
-
-<style>
-	/*video bg styles*/
-	.is_overlay{
-		/* position: fixed; */
-		display: block;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -99;
-		overflow: hidden;
-		max-height: 100vh;
-	}
-	#trailer > video{
-		position: fixed;
-		top: 0; right: 0; bottom: 0; left: 0;
-		inset: 0;
-		width: 100%;
-		height: 100%;
-		filter: contrast(0.9) brightness(0.6);
-		overflow: hidden;
-		max-width: 100%;
-		max-height: 100%;
-		object-fit: cover;
-		-webkit-object-fit: cover;
-		-moz-object-fit: cover;
-		-o-object-fit: cover;
-	}
-
-	/* Если есть поддержка object-fit (Chrome/Chrome для Android, Safari в iOS 8 и Opera), используем его:*/
-	@supports (object-fit: cover) {
-		#trailer > video {
-			position: fixed;
-			display: block;
-			top: 0; right: 0; bottom: 0; left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			-webkit-object-fit: cover;
-			-moz-object-fit: cover;
-			-o-object-fit: cover;
-		}
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
-		gap: 2rem;
-		/* padding: 40px 0; */
-		border-top: 1px solid white;
-	}
-
-	/* Блок PictureBlock со стилем размытия */
-	.picture-wrapper {
-		max-width: 100%;
-        position: relative;
-        backdrop-filter: blur(10px); 
-        -webkit-backdrop-filter: blur(10px); /* Для Safari */
-        padding: 3rem; /* Оставляем отступы вокруг блока */
-        z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
-		margin: 0 auto;
-		border-radius: 16px;
-    }
-</style>

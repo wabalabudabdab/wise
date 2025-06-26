@@ -2,8 +2,8 @@
 import Block from "../../components/ui/Block.astro";
 ---
 
-<section class="bg-black">
-  <div class="container text-secondary">
+<section>
+  <div class="text-secondary max-w-[912px] mx-auto">
     <ul style="align-items: start;" role="list" class="mx-auto flex flex-col lg:flex-row text-between gap-6 items-center text-secondary mt-3 link-card-grid">
       <Block
       text="WISE BRIDGE BROKER SERVICES&nbsp;- FZCO"
@@ -12,7 +12,7 @@ import Block from "../../components/ui/Block.astro";
       text="info@wisebridge.pro"
     />
     <Block
-    text="DSO-IFZA, IFZA Properties, Dubai Silicon Oasis, United Arab Emirates"
+    text="DSO-IFZA, IFZA Properties,<br>Dubai Silicon Oasis,<br>United Arab Emirates"
   />
     </ul>
   </div>
@@ -23,8 +23,6 @@ import Block from "../../components/ui/Block.astro";
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
     gap: 2rem;
-    padding: 40px 0;
-    border-top: 1px solid white;
-    background: black;
+    padding: 32px 0;
   }
 </style>

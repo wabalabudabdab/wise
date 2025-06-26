@@ -7,25 +7,16 @@ const { text } = Astro.props;
 ---
 
 <li class="link-card">
-		<p>
-			{text}
+		<p 
+		set:html={text}
+		class="text-gray"
+		>
 		</p>
 </li>
 <style>
-	.link-card {
+	.link-card > p {
 		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-position: 100%;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
+		text-align: center;
 	}
 
 </style> 

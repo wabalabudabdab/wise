@@ -1,17 +1,16 @@
 ---
-import Testimonials from "@/pages/logistics/Testimonials.astro";
+import Testimonials from "./logistics/Testimonials.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Logo from "@/components/ui/Logo.astro";
-import Button from "@/components/ui/Button.astro";
 import AboutCompany from "@/components/base/AboutCompany.astro";
-import Intro from "@/pages/main/Intro.astro";
+import IntroLogistics from "./logistics/IntroLogistics.astro";
+import Button from "@/components/ui/Button.astro";
 ---
 
 <BaseLayout>
 	<main>
 		<!--about block-->
 		<section class="relative bg-primary overflow-hidden w-full min-h-screen flex items-center p-0" style="min-height: 100vh; ">
-			<div class="absolute inset-0 w-full h-full -z-10" style="filter: brightness(0.5)" >
+			<div class="absolute inset-0 w-full h-full -z-10" style="filter: brightness(0.3)" >
 				<video
 					class="w-full h-full object-cover"
 					autoplay
@@ -23,97 +22,38 @@ import Intro from "@/pages/main/Intro.astro";
 					<source src="logistic.mp4" />
 				</video>
 			</div>
-				<Intro />								
+				<IntroLogistics />								
 			</div>
 			</div>
 		</section>
-		<!--about block-->
-		<br/>	
-		<br/>
-		<section class= "bg-white text-black">
-		
-			<!--features block-->
-				<Testimonials/>
-			<!--features block-->
 
-			<!--logistic block-->
-			<div style= "margin-top:100px">
+		<section class= "bg-white text-black max-w-6xl mx-auto" style="padding-left: 32px; padding-right: 32px; padding-bottom: 32px">
+		<!--features block-->
 
-					<div class="md:grid md:grid-cols-2 gap-12 items-center">
-						<div class="md:order-1 md:col-span-1">
-							<h2 class="text-4xl md:hidden mb-10 text-black">Automatisation solutions</h2> {/* Heading only on mobile */}
-							<img class="rounded w-full md:w-auto" src="logistics.jpg" alt="Automation" />
-						</div>
-						<div class="md:order-2 flex flex-col items-start md:col-span-1">
-							<div class="hidden md:block"> {/* Text only on desktop */}
-								<h2 class="text-4xl text-black">Automatisation solutions</h2>
-								<p class="mt-6 text-black">
-									Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
-								</p>
-								<p class="mt-4 text-black">
-									Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
-								</p>
-							</div>
-							<div class="md:hidden mt-4"> {/* Text only on mobile, below the image */}
-								<p class="mt-6 text-black">
-									Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
-								</p>
-								<p class="mt-4 text-black">
-									Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
-								</p>
-							</div>
-						</div>
-					</div>
+			<Testimonials/>
+
+		<!--logistic block-->
+			<div class="md:grid md:grid-cols-2 gap-12">
+				<div class="order-1 md:order-2 md:col-span-1" style="padding-bottom: 64px;">
+					<img class="rounded w-full md:w-auto" src="logistics.jpg" alt="Automation" />
+				</div>
+				<div class="order-2 md:order-1 flex flex-col items-start md:col-span-1">
+					<h2 class="text-black">Automatisation solutions</h2>
+					<p class="mt-6 text-black" style="font-size: 16px; line-height: 1.6">
+						Our contract logistics solutions integrate seamlessly with our air, ocean and&nbsp;road freight services to&nbsp;ensure that your business needs are met in&nbsp;a&nbsp;timely and&nbsp;cost-effective manner.
+					</p>
+					<p class=" text-black" style="font-size: 16px; line-height: 1.6">
+						Our own Warehouse Management System together with&nbsp;robotic full-fulfilment sorting solution capable to&nbsp;operate on&nbsp;1-piece level.
+					</p>
+					<Button href="mailto:info@wisebridge.pro" text="Connect" className="mt-4 w-full md:w-auto md:max-w-fit mx-auto md:mx-0 mb-8"  textColor="black" 
+					borderColor="black" />
+				</div>
 			</div>
-			<!--logistic block-->
-			</div>
-
-
 		</section>
-		<AboutCompany/>
 
+		<!-- Contacts -->
+		<section class="bg-black bottom-0 left-0 right-0 w-full">
+			<AboutCompany />
+		</section>
 	</main>	
 </BaseLayout>
-
-<style>
-	/*video bg styles*/
-	.is_overlay{
-		width: 100%;
-		height: 100%;
-		overflow: hidden;
-		max-height: 100vh;
-	}
-	#video{
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-
-	.about {
-		width: 100%;
-		height: 100%;
-		padding: 0;
-		margin: 0;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
-		gap: 2rem;
-		/* padding: 40px 0; */
-		border-top: 1px solid white;
-	}
-
-	/* Блок PictureBlock со стилем размытия */
-	.picture-wrapper {
-		max-width: 100%;
-        position: relative;
-        backdrop-filter: blur(10px); 
-        -webkit-backdrop-filter: blur(10px); /* Для Safari */
-        padding: 3rem; /* Оставляем отступы вокруг блока */
-        z-index: 10; /* Чтобы блок был выше по сравнению с видео на фоне */
-		margin: 0 auto;
-		border-radius: 16px;
-		margin-top:40px
-    }
-</style>
