@@ -1,28 +1,27 @@
----
-import Block from "../../components/ui/Block.astro";
----
+---  
+import Block from "../../components/ui/Block.astro";  
+---  
 
-<section>
-  <div class="text-secondary max-w-[912px] mx-auto">
-    <ul style="align-items: start;" role="list" class="mx-auto flex flex-col lg:flex-row text-between gap-6 items-center text-secondary mt-3 link-card-grid">
-      <Block
-      text="WISE BRIDGE BROKER SERVICES&nbsp;- FZCO"
-    />
-      <Block
-      text="info@wisebridge.pro"
-    />
-    <Block
-    text="DSO-IFZA, IFZA Properties,<br>Dubai Silicon Oasis,<br>United Arab Emirates"
-  />
-    </ul>
-  </div>
-</section>
+<section>  
+  <div class="text-secondary max-w-[912px] mx-auto">  
+    <ul role="list" class="mx-auto link-card-grid text-secondary mt-3">  
+      <Block text="WISE BRIDGE BROKER SERVICES&nbsp;- FZCO" />  
+      <Block text="info@wisebridge.pro" />  
+      <Block text="DSO-IFZA, IFZA Properties,<br>Dubai Silicon Oasis,<br>United Arab Emirates" />  
+    </ul>  
+  </div>  
+</section>  
 
-<style>
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));
-    gap: 2rem;
-    padding: 32px 0;
-  }
-</style>
+<style>  
+.link-card-grid {  
+  display: grid;  
+  grid-template-columns: repeat(auto-fit, minmax(16ch, 1fr));  
+  gap: 2rem;  
+  padding: 32px 0;  
+}  
+@media (max-width: 767px) {  
+  .link-card-grid {  
+    grid-template-columns: 1fr !important;  
+  }  
+}  
+</style>  

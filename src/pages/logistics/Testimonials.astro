@@ -1,5 +1,4 @@
 ---
-// Define testimonials/opinions data
 const humanOpinions = [
   {
     name: "Air Freight",
@@ -20,14 +19,14 @@ const humanOpinions = [
 ---
 
 <section class="bg-nocolor">
-  <div class="grid lg:grid-cols-3 text-black gap-6 text-center mt-16 lg:mt-28 mb-16 lg:mb-28">
-    {
-      humanOpinions.map((opinion) => (
+  <div class="grid md:grid-cols-3 text-black gap-6 text-center mt-16 lg:mt-28 mb-16 lg:mb-28">
+      {
+        humanOpinions.map((opinion) => (
         <div class="max-w-80 mx-auto">
           <h2 class="mb-4">{opinion.name}</h2>
           <p>{opinion.opinion}</p>
-        </div>
-      ))
-    }
-  </div>
+         </div>
+        ))
+      }
+    </div>
 </section>

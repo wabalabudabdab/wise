@@ -10,20 +10,19 @@ import BaseHead from "../components/BaseHead.astro";
 
   <body class="bg-primary relative">
     <div id="logoContainer" class="transition-all duration-100">
-      <Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"}/>
+      <Logo title={"WISE\u00A0BRIDGE"} subtitle={"Dubai\u00A0Silicon\u00A0Oasis"} where={"UAE"} />
     </div>
 
-    <!-- Бургер-меню -->
     <button id="burgerBtn" class="absolute top-6 right-8 z-50 flex flex-col items-center justify-center w-10 h-10 space-y-2 focus:outline-none hover:opacity-70 transition-all duration-100 cursor-pointer">
       <span class="block w-10 h-0.5 bg-white"></span>
       <span class="block w-10 h-0.5 bg-white"></span>
       <span class="block w-10 h-0.5 bg-white"></span>
     </button>
-    <!-- Боковая панель -->
-    <div id="sideMenu" class="absolute top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-all duration-300 flex flex-col">
+
+    <div id="sideMenu" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 flex flex-col pointer-events-none">
       <button id="closeMenu" class="self-end m-6 text-3xl text-gray-900 hover:text-dark focus:outline-none cursor-pointer">&times;</button>
       <nav class="flex flex-col mt-10 space-y-6 px-8">
-        <a href="/" class="text-lg text-gray-900 hover:text-dark font-semibold"> Main</a>
+        <a href="/" class="text-lg text-gray-900 hover:text-dark font-semibold">Main</a>
         <a href="/logistics" class="text-lg text-gray-900 hover:text-dark font-semibold">Logistics</a>
       </nav>
     </div>
@@ -33,49 +32,55 @@ import BaseHead from "../components/BaseHead.astro";
       const sideMenu = document.getElementById('sideMenu');
       const closeMenu = document.getElementById('closeMenu');
       const logoContainer = document.getElementById('logoContainer');
-      
+
       let lastScrollTop = 0;
-      
-      burgerBtn.addEventListener('click', () => {
+      let menuOpen = false;
+
+      function openMenu() {
         sideMenu.classList.remove('translate-x-full');
-      });
-      closeMenu.addEventListener('click', () => {
+        sideMenu.classList.add('translate-x-0');
+        sideMenu.classList.remove('pointer-events-none');
+        menuOpen = true;
+      }
+
+      function closeMenuFn() {
+        sideMenu.classList.remove('translate-x-0');
         sideMenu.classList.add('translate-x-full');
-      });
-      
-      // Закрытие по клику вне меню
+        sideMenu.classList.add('pointer-events-none');
+        menuOpen = false;
+      }
+
+      burgerBtn.addEventListener('click', openMenu);
+      closeMenu.addEventListener('click', closeMenuFn);
+
       document.addEventListener('click', (e) => {
-        const target = e.target as Element;
-        if (!sideMenu.contains(target) && !burgerBtn.contains(target)) {
-          sideMenu.classList.add('translate-x-full');
+        const target = e.target;
+        if (menuOpen && !sideMenu.contains(target) && !burgerBtn.contains(target)) {
+          closeMenuFn();
         }
       });
-      
-      // Скрытие при прокрутке вниз
+
+      window.addEventListener('resize', () => {
+        closeMenuFn(); // always close on resize to prevent weird states
+      });
+
       window.addEventListener('scroll', () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
         if (scrollTop > lastScrollTop && scrollTop > 100) {
-          // Прокрутка вниз
           burgerBtn.classList.add('opacity-0', '-translate-y-4');
-          sideMenu.classList.add('opacity-0');
           logoContainer.classList.add('opacity-0', '-translate-y-4');
         } else {
-          // Прокрутка вверх
           burgerBtn.classList.remove('opacity-0', '-translate-y-4');
-          sideMenu.classList.remove('opacity-0');
           logoContainer.classList.remove('opacity-0', '-translate-y-4');
         }
-        
         lastScrollTop = scrollTop;
       });
     </script>
+
     <slot />
-    
-    
-    <script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"
-    ></script>
-    <script type="text/javascript">
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
       AOS.init();
     </script>
   </body>
